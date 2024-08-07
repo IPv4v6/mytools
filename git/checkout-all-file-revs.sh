@@ -7,7 +7,7 @@ if [[ -z ${1} ]]; then
 	exit 0
 fi
 
-for REV in $(git log --diff-filter=ACMRd --format=%H -- "${1}")
+for REV in $(git log --all --diff-filter=ACMRd --format=%H -- "${1}")
 do
 	DATE=$(git log -1 --format=%as "${REV}")
 	git checkout "${REV}" "${1}"
