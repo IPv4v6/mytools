@@ -4,13 +4,13 @@ set -e
 set -u
 
 TARGET=/opt/john
-GITURL=https://github.com/magnumripper/JohnTheRipper
+GITURL=https://github.com/openwall/john
 
 rm -rf ${TARGET}
 mkdir -p ${TARGET}
 
 git clone ${GITURL}
-cd JohnTheRipper/src
+cd john/src
 ./configure
 make
 cp -av ../run/* ${TARGET}
